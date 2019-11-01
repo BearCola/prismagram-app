@@ -10,6 +10,7 @@ import Notifications from "../screens/Tabs/Notifications";
 import Profile from "../screens/Tabs/Profile";
 import Search from "../screens/Tabs/Search";
 import NavIcon from "../components/NavIcon";
+import { stackStyles } from "./config";
 
 const stackFactory = (initialRoute, customConfig) =>
   createStackNavigator({
@@ -17,7 +18,7 @@ const stackFactory = (initialRoute, customConfig) =>
       screen: initialRoute,
       navigationOptions: {
         ...customConfig,
-        headerStyle: { backgroundColor: "#EFEEEF" }
+        headerStyle: { ...stackStyles }
       }
     }
   });
@@ -39,9 +40,7 @@ export default createBottomTabNavigator(
       }
     },
     Search: {
-      screen: stackFactory(Search, {
-        title: "Search"
-      }),
+      screen: stackFactory(Search),
       navigationOptions: {
         tabBarIcon: ({ focused }) => (
           <NavIcon
@@ -59,8 +58,12 @@ export default createBottomTabNavigator(
         tabBarIcon: ({ focused }) => (
           <NavIcon
             focused={focused}
-            size={28}
-            name={Platform.OS === "ios" ? "ios-add" : "md-add"}
+            size={32}
+            name={
+              Platform.OS === "ios"
+                ? "ios-add-circle-outline"
+                : "md-add-circle-outline"
+            }
           />
         )
       }
@@ -101,10 +104,11 @@ export default createBottomTabNavigator(
     }
   },
   {
+    initialRoute: "Search",
     tabBarOptions: {
       showLabel: false,
-      tabStyle: {
-        backgroundColor: "#EFEEEF"
+      style: {
+        backgroundColor: "#FAFAFA"
       }
     }
   }
