@@ -4,7 +4,7 @@ import AuthNavigation from "../navigation/AuthNavigation";
 import MainNavigation from "../navigation/MainNavigation";
 
 export default () => {
-  const isLoggedIn = true; //useIsLoggedIn();
+  const isLoggedIn = true; // useIsLoggedIn();
 
   return isLoggedIn ? <MainNavigation /> : <AuthNavigation />;
 };
