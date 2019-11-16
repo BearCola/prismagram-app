@@ -8,6 +8,7 @@ const MainNavigation = createStackNavigator(
   {
     PhotoNavigation,
     TabNavigation,
+
     MessageNavigation
   },
   {

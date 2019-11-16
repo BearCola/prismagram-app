@@ -130,7 +130,6 @@ export default createBottomTabNavigator(
     }
   },
   {
-    initialRoute: "Profile",
     tabBarOptions: {
       showLabel: false,
       style: {
