@@ -6,9 +6,8 @@ import { stackStyle } from "./config";
 
 const MainNavigation = createStackNavigator(
   {
-    PhotoNavigation,
     TabNavigation,
-
+    PhotoNavigation,
     MessageNavigation
   },
   {

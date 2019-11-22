@@ -77,11 +77,15 @@ export default ({ navigation }) => {
       setIsLoading(true);
       const {
         data: { location }
-      } = await axios.post("http://localhost:4000/api/upload", formData, {
-        headers: {
-          "content-type": "multipart/form-data"
+      } = await axios.post(
+        "https://prismagram-backend7.herokuapp.com/api/upload",
+        formData,
+        {
+          headers: {
+            "content-type": "multipart/form-data"
+          }
         }
-      });
+      );
 
       const {
         data: { upload }
